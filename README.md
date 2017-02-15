@@ -2,6 +2,8 @@
 
 Full Stack Project
 
+[Deployed Front End link](https://ashlenprice.github.io/code-notes-fe/)
+
 ## Deployment instruction
 
 To deploy a browser-template based SPA, run `grunt deploy`.
