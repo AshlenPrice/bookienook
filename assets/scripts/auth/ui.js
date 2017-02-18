@@ -6,6 +6,8 @@ const success = () => {
 
 const signUpSuccess = () => {
   $('#sign-up-prompt').text('Account Created!');
+  $('#sign-up')[0].reset();
+  // $('#sign-up-prompt')[0].reset();
   $('#signUpModal').modal('hide');
 };
 
@@ -15,13 +17,12 @@ const signUpFail = () => {
 };
 
 const signInFail = () => {
-  $('#sign-in-prompt').text
-  ('Something\'s not right. Please Try Again!');
+  $('#sign-in-prompt').text('Something\'s not right. Please Try Again!');
 };
 
 const changePwSuccess = () => {
-  $('#change-pw-prompt').text
-  ('Password Changed Successfully!');
+  $('#change-password')[0].reset();
+  $('#change-pw-prompt').text('Password Changed Successfully!');
   $('#changePwModal').modal('hide');
 };
 
@@ -36,34 +37,28 @@ const failure = () => {
 };
 // On sign in, un-hide game board elements
 
-// const signInSuccess = () => {
-//   $('#prompt').text('Ready For Battle!');
+const signInSuccess = () => {
+  $('#sign-in')[0].reset();
+    $('#prompt').text('Sign In success!');
+  $('#signInModal').modal('hide');
+};
+
 //   $('#signUpButton').addClass('hidden');
 //   $('#signInButton').addClass('hidden');
 //   $('#changePwButton').removeClass('hidden');
 //   $('#sign-out').removeClass('hidden');
-//   $('#game-log').removeClass('hidden');//corresponds to game history button
-//   $('#signInModal').modal('hide');
-//   $('#new-battle').removeClass('hidden');
-//   // $('.scoreboard').removeClass('hidden');
-//   // $('.status-box').removeClass('hidden');
-// };
 
-// On sign out, hide game board elements
-//
-// const signOutSuccess = () => {
-//   $('#prompt').text('Sign Out Successful! Please Register or Sign In to Play Again!');
-//   // $('.create-board-button').addClass('hidden');
-//   $('#game-log').addClass('hidden');
-//   $('.gameboard').addClass('hidden');
+
+
+const signOutSuccess = () => {
+  $('#prompt').text('Sign Out Successful! Please Register or Sign In to write reviews!');
+
+};
 //   $('#signUpButton').removeClass('hidden');
 //   $('#signInButton').removeClass('hidden');
 //   $('#changePwButton').addClass('hidden');
 //   $('#sign-out').addClass('hidden');
 //   $('#right-column').addClass('hidden');
-//   $('#new-battle').addClass('hidden');
-//   $('.scoreboard').addClass('hidden');
-//   $('.status-box').addClass('hidden');
 //   $('#change-pw-prompt').text
 //   (' ');
 //   $('#sign-up-prompt').text
@@ -74,16 +69,16 @@ const failure = () => {
 
 
 
-};
+
 
 module.exports = {
   failure,
   success,
   signUpSuccess,
   signUpFail,
-  // signInSuccess,
+  signInSuccess,
   signInFail,
   changePwFail,
   changePwSuccess,
-  // signOutSuccess,
+  signOutSuccess,
 };

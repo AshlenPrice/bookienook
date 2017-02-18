@@ -4,10 +4,8 @@ const getFormFields = require(`../../../lib/get-form-fields`);
 const api = require('./api');
 const ui = require('./ui');
 const store = require('../store');
-// const gameEvents = require('../game/events');
 
 // these functions will run the server requests in the api.js file
-
 const onSignUp = function (event) {
   event.preventDefault();
 
@@ -17,7 +15,6 @@ const onSignUp = function (event) {
     .then(ui.signUpSuccess)
     .catch(ui.signUpFail)
     ;
-    $('#sign-up')[0].reset();
 
 };
 
@@ -31,7 +28,7 @@ const onSignIn = function (event) {
     })
     .then(ui.signInSuccess)
     .catch(ui.signInFail);
-    $('#sign-in')[0].reset();
+    // $('#sign-in')[0].reset();
 
 
 };
@@ -44,7 +41,6 @@ const onChangePassword = function (event) {
   api.changePassword(data)
     .then(ui.changePwSuccess)
     .catch(ui.changePwFail);
-    $('#change-password')[0].reset();
 };
 
 const onSignOut = function (event) {
