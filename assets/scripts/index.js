@@ -7,6 +7,8 @@ const authEvents = require('./auth/events.js');
 
 $(() => {
   setAPIOrigin(location, config);
+  console.log(authEvents); // add a log here, everything look ok?
+  authEvents.addHandlers();
 });
 
 
@@ -15,7 +17,7 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 require('./example');
-$(() => {
-  authEvents.addHandlers();
-
-});
+// $(() => {
+//   authEvents.addHandlers();
+//
+// });
