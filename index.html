@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>BookieNook</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags unless you know what you are doing -->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>BookieNook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags unless you know what you are doing -->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
+</head>
+
 <body class="container-fluid">
   <header>
-    <!-- Buttons for user account informantion, they have corresponding modals -->
-    <div class="user-account">
-      <button type="button" class="btn btn-primary" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+          <a class="navbar-brand" href="#">BookieNook</a>
+        </div>
+      </div>
+      <!-- Buttons for user account informantion, they have corresponding modals -->
+      <div class="user-account collapse navbar-collapse">
+        <button type="button" class="btn btn-primary navbar-btn" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
       Register!
       </button>
-      <button type="button" class="btn btn-primary" id="signInButton" data-toggle="modal" data-target="#signInModal">
+        <button type="button" class="btn btn-primary navbar-btn" id="signInButton" data-toggle="modal" data-target="#signInModal">
       Sign In!
       </button>
-      <button type="button" class="btn btn-primary" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
+        <button type="button" class="btn btn-primary navbar-btn" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
       Change Password!
       </button>
-      <button type="button" class="btn btn-primary" id="sign-out">
+        <button type="button" class="btn btn-primary navbar-btn" id="sign-out">
           Sign Out!
         </button>
-    </div>
-
+      </div>
+    </nav>
     <!-- User account Modals -->
-      <!-- Sign-Up -->
+    <!-- Sign-Up -->
     <div class="registration">
       <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
         <div class="modal-dialog" role="document">
@@ -136,7 +154,7 @@
           </div>
         </div>
       </div>
-        <!-- <form id="sign-out">
+      <!-- <form id="sign-out">
         <fieldset>
         <legend>Sign Out!</legend>
         <input type="submit" name="submit" value="Sign Out!">
@@ -148,17 +166,15 @@
 
 
   <main>
-  <h1>BookieNook</h1>
+  <section class="intro" id="welcome-text">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </section>
+  <section class="bookslist" id="showbooks">
+    <button type="button" class="btn btn-default btn-lg" id="books-btn">Check Out Books you can read!</button>
+  </section>
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-
-    </main>
+  </main>
 
 
 
@@ -169,6 +185,8 @@
 
 
 
+  <footer></footer>
 
-    </body>
+</body>
+
 </html>

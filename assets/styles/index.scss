@@ -1,2 +1,18 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+// Color templates
+$white: #fff;
+$quartz: #4d4a4b;
+$quick-silver: #ada39e;
+$sea-serpent: #3fc0c9;
+$pastel-blue: #b9d4ce;
+
+
+
+body {
+  background-color: $quick-silver;
+  font-family: 'Mouse Memoirs', sans-serif;
+  text-align: center;
+
+}
