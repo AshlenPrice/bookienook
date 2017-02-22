@@ -1,4 +1,6 @@
 'use strict';
+const showBooksTemplate = require('../templates/book-listing.handlebars');
+
 
 const onSuccess = function (data) {
   if (data.book) {
@@ -8,35 +10,40 @@ const onSuccess = function (data) {
   }
 };
 
-const onIndexSuccess = function (data) {
-  if (data.books) {
-    console.log(data.books);
-  }
+const getBooksSuccess = (data) => {
+  console.table(data.books);
+
+  let showBooksHtml = showBooksTemplate({ books: data.books });
+$('.bookslist').append(showBooksHtml);
 };
 
-const onGetSuccess = function (data) {
-  if (data.book) {
-    console.log(data.book);
-  }
+// selects the content element and appends nee HTML
+const clearBooks = () => {
+  $('.bookslist').empty();
 };
+// const onIndexSuccess = function (data) {
+//   if (data.books) {
+//     console.log(data.books);
+//   }
+// };
+
+// const onGetSuccess = function (data) {
+//   if (data.book) {
+//     console.log(data.books);
+//   }
+// };
 
 const onError = function (response) {
   console.error(response);
 };
 
-// const onPostSuccess = function (data) {
-//   console.log(data);
-// };
-//
-// const onPatchSuccess = function (data) {
-//   console.log(data.book);
-// };
+
 
 module.exports = {
   onSuccess,
   onError,
-  // onPostSuccess,
-  // onPatchSuccess,
-  onGetSuccess,
-  onIndexSuccess,
+  getBooksSuccess,
+  clearBooks
+  // onGetSuccess,
+  // onIndexSuccess,
 };

@@ -2,13 +2,10 @@
 const config = require('../config');
 const store = require('../store');
 
-const index = function () {
+const getBooks= function () {
   return $.ajax({
     url: config.apiOrigin + '/books',
     method: 'GET',
-    headers: {
-      // Authorization: `Token token=${store.user.token}`,
-    },
   });
 };
 
@@ -23,6 +20,6 @@ const show = function (id) {
 };
 
 module.exports = {
-  index,
+  getBooks,
   show,
 };

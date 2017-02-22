@@ -23,12 +23,19 @@ const getFormFields = require('../../../lib/get-form-fields');
 // };
 const onGetBooks = function (event) {
   event.preventDefault();
-  api.index()
-    .then((response) => {
-      console.table(response['books']); // insert handlebars template
-    })
+  api.getBooks()
+  .then(ui.getBooksSuccess)
+  // console.table(response.books);
+    // .then((response) => {
+    //   console.table(response['books']); // insert handlebars template
+    // })
     .catch(ui.onError);
   };
+
+  const onClearBooks = (event) => {
+  event.preventDefault();
+  ui.clearBooks();
+};
   // stolen from below api.index() for troubleshooting clarity
   // if (store.data.books.length === 0) {
   //   api.index()
@@ -40,10 +47,11 @@ const onGetBooks = function (event) {
 
 const addHandlers = () => {
   $('#books-btn').on('click', onGetBooks);
+  $('#clearBooksButton').on('click', onClearBooks);
+
 };
 
 module.exports = {
   // onGetBook,
-  onGetBooks,
   addHandlers
   };
