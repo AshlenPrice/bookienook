@@ -5,7 +5,7 @@ const showReviewsHandlebars = require('../templates/show-reviews.handlebars');
 
 
 const onSuccess = function (data) {
-  if (data.log) {
+  if (data.review) {
   } else {
     $('#show-reviews').css('display', 'initial');
 

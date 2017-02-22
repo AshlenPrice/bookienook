@@ -12,8 +12,8 @@ const onCreateReview = function (event) {
   let data = getFormFields(event.target);
   api.createReview(data)
     .then((response) => {
-      store.log = response.log;
-      return store.log;
+      store.review = response.review;
+      return store.review;
     })
     .then(ui.onCreateSuccess)
     .catch(ui.onError);
