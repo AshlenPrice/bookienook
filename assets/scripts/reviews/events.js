@@ -19,25 +19,21 @@ const onCreateReview = function (event) {
     .catch(ui.onError);
 };
 
-const onGetReviews = function (event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
-
-  if (data.review.id.length === 0) {
-    api.indexReviews()
-    .then(ui.onSuccess)
-    .catch(ui.onError);
-  } else {
-    api.showReview(data.review.id)
-    .then(ui.onSuccess)
-    .catch(ui.onError);
-  }
-};
 const onShowReview = function (event) {
   event.preventDefault();
-  api.showReview()
-  .then(ui.onShowSuccess)
-  .catch(ui.onShowError);
+  let data = getFormFields(event.target);
+  console.log(data);
+  let id = data.review.id;
+    api.showReview(id)
+    .then(ui.onSuccess)
+    .catch(ui.onError);
+};
+
+const onGetReviews = function (event) {
+  event.preventDefault();
+  api.indexReviews()
+  .then(ui.onSuccess)
+  .catch(ui.onError);
 };
 
 
@@ -62,8 +58,9 @@ const onDeleteReview = function (event) {
 
 
 const addHandlers = () => {
-  $('#sign-in').on('submit', onGetReviews);
-  $('#reviews').on('submit', onShowReview);
+  // $('#sign-in').on('submit', onGetReviews);
+  $('#show-review').on('submit', onShowReview);
+  $('#reviews').on('submit', onGetReviews);
   $('#delete-review').on('submit', onDeleteReview);
   $('#update-review').on('submit', onUpdateReview);
   $('#review-post').on('submit', onCreateReview);

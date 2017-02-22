@@ -5,14 +5,11 @@ const showReviewsHandlebars = require('../templates/show-reviews.handlebars');
 
 
 const onSuccess = function (data) {
-  if (data.review) {
-  } else {
-    $('#show-reviews').css('display', 'initial');
+console.table(data);
+    let getReviewsHtml = getReviewsHandlebars({ reviews: data.reviews });
+    $('#global-reviews').html(getReviewsHtml);
+  };
 
-    let getReviewsHtml = getReviewsHandlebars({ logs: data.reviews });
-    $('#global').html(getReviewsHtml);
-  }
-};
 const onCreateSuccess =function() {
   console.log('Successful log');
 };
@@ -20,8 +17,8 @@ const onCreateSuccess =function() {
 
 const onShowSuccess = function(data){
     console.table(data.reviews);
-  $('#show-my-reviews').css('display', 'initial');
-  let showReviewsHtml = showReviewsHandlebars({ logs: data.reviews });
+  // $('#show-my-reviews').css('display', 'initial');
+  let showReviewsHtml = showReviewsHandlebars({ review: data.reviews });
   $('#my-reviews').html(showReviewsHtml);
 };
 
