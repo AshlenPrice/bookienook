@@ -176,6 +176,52 @@
 
     <div id="content" class="content">
     </div>
+<!-- Create a new review -->
+    <form class='create-review' id="review-post">
+           <fieldset>
+             <div class="form-group">
+               <input type="text" name="review[review_content]" placeholder="Add your review">
+               <input type="text" name="review[book_id]" placeholder="Book id">
+               <!-- <input type="text" name="content[user_id]" id="user-id"> -->
+             </div>
+             <button type="submit" class="btn btn-default">Create Review</button>
+         </fieldset>
+         </form>
+<!-- Update a review -->
+  <form class='review-update' id="update-review">
+    <fieldset>
+      <div class="form-group">
+        <input type="text" name="review[id]" placeholder="ID">
+        <input type="text" name="review[review_content]"     placeholder="Edited Review content">
+      </div>
+      <button type="submit" class="btn btn-default">Edit Review</button>
+    </fieldset>
+  </form>
+
+<!-- Delete a review -->
+<form class='reviewdelete' id="delete-review">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" name="review[id]" placeholder="Delete Review">
+        </div>
+        <button type="submit" class="btn btn-default">Delete</button>
+    </fieldset>
+</form>
+
+
+
+
+
+  <div class="view" id="show-reviews">
+    <table class="table" id="global-reviews">
+    </table>
+  </div>
+
+
+  <div class="view" id="show-my-reviews">
+    <table class="table" id="my-reviews">
+    </table>
+  </div>
 
 
   </main>
