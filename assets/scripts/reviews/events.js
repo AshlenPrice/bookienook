@@ -5,6 +5,7 @@ const store = require('../store');
 
 const getFormFields = require('../../../lib/get-form-fields');
 
+
 const onCreateReview = function (event) {
   event.preventDefault();
 
@@ -32,6 +33,13 @@ const onGetReviews = function (event) {
     .catch(ui.onError);
   }
 };
+const onShowReview = function (event) {
+  event.preventDefault();
+  api.showReview()
+  .then(ui.onShowSuccess)
+  .catch(ui.onShowError);
+};
+
 
 const onUpdateReview = function (event) {
   event.preventDefault();
@@ -54,7 +62,8 @@ const onDeleteReview = function (event) {
 
 
 const addHandlers = () => {
-  // $('#log-search').on('submit', onGetReviews);
+  $('#sign-in').on('submit', onGetReviews);
+  $('#reviews').on('submit', onShowReview);
   $('#delete-review').on('submit', onDeleteReview);
   $('#update-review').on('submit', onUpdateReview);
   $('#review-post').on('submit', onCreateReview);
@@ -62,7 +71,9 @@ const addHandlers = () => {
 
 module.exports = {
    onCreateReview,
+   onShowReview,
    onGetReviews,
    onUpdateReview,
+   onDeleteReview,
    addHandlers
  };

@@ -1,0 +1,17 @@
+<thead>
+  <tr>
+    <th>ID</th>
+    <th>Reviews</th>
+    <th>Book ID</th>
+    <!-- <th></th> -->
+  </tr>
+</thead>
+<tbody>
+  {{#each reviews as |review|}}
+  <tr data-id="{{review.id}}">
+    <th scope="row">{{review.id}}</th>
+    <td>{{review.review_content}}</td>
+    <td>{{review.book.name}}</td>
+  </tr>
+  {{/each}}
+</tbody>

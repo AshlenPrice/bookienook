@@ -184,7 +184,7 @@
                <input type="text" name="review[book_id]" placeholder="Book id">
                <!-- <input type="text" name="content[user_id]" id="user-id"> -->
              </div>
-             <button type="submit" class="btn btn-default">Create Review</button>
+             <button type="submit" class="btn btn-default btn-lg">Create Review</button>
          </fieldset>
          </form>
 <!-- Update a review -->
@@ -194,34 +194,39 @@
         <input type="text" name="review[id]" placeholder="ID">
         <input type="text" name="review[review_content]"     placeholder="Edited Review content">
       </div>
-      <button type="submit" class="btn btn-default">Edit Review</button>
+      <button type="submit" class="btn btn-default btn-lg">Edit Review</button>
     </fieldset>
   </form>
 
-<!-- Delete a review -->
-<form class='reviewdelete' id="delete-review">
-      <fieldset>
-        <div class="form-group">
-          <input type="text" name="review[id]" placeholder="Delete Review">
-        </div>
-        <button type="submit" class="btn btn-default">Delete</button>
-    </fieldset>
-</form>
 
+<!--get reviews  -->
 
+<form class='get-reviews' id="reviews">
+    <fieldset>
+      <button type="submit" class="btn btn-default btn-lg">Look at Reviews</button>
+  </fieldset>
+  </form>
 
-
-
-  <div class="view" id="show-reviews">
+  <div class="show" id="show-reviews">
     <table class="table" id="global-reviews">
     </table>
   </div>
 
 
-  <div class="view" id="show-my-reviews">
+  <div class="show" id="show-my-reviews">
     <table class="table" id="my-reviews">
     </table>
   </div>
+
+<!-- Delete a review -->
+  <form class='reviewdelete' id="delete-review">
+        <fieldset>
+          <div class="form-group">
+            <input type="text" name="review[id]" placeholder="Delete Review">
+          </div>
+          <button type="submit" class="btn btn-default btn-lg">Delete</button>
+      </fieldset>
+  </form>
 
 
   </main>
