@@ -17,7 +17,6 @@ const onCreateSuccess =function() {
 
 const onShowSuccess = function(data){
     console.table(data.reviews);
-  // $('#show-my-reviews').css('display', 'initial');
   let showReviewsHtml = showReviewsHandlebars({ review: data.reviews });
   $('#my-reviews').html(showReviewsHtml);
 };

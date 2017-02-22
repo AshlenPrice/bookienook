@@ -18,7 +18,10 @@
     <td>{{book.author}}</td>
     <td>{{book.grade_level}}</td>
     <td>{{book.description}}</td>
-    <td>{{book.reviews}}</td>
+    <td>{{#each reviews as |review|}}
+      {{review.review_content}}
+      {{/each}}
+    </td>
   </tr>
   {{/each}}
 </tbody>

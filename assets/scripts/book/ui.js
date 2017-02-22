@@ -17,21 +17,10 @@ const getBooksSuccess = (data) => {
 $('.bookslist').append(showBooksHtml);
 };
 
-// selects the content element and appends nee HTML
+
 const clearBooks = () => {
   $('.bookslist').empty();
 };
-// const onIndexSuccess = function (data) {
-//   if (data.books) {
-//     console.log(data.books);
-//   }
-// };
-
-// const onGetSuccess = function (data) {
-//   if (data.book) {
-//     console.log(data.books);
-//   }
-// };
 
 const onError = function (response) {
   console.error(response);
@@ -44,6 +33,4 @@ module.exports = {
   onError,
   getBooksSuccess,
   clearBooks
-  // onGetSuccess,
-  // onIndexSuccess,
 };
