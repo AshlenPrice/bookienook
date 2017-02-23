@@ -64,6 +64,7 @@ const signInSuccess = () => {
 
 const signOutSuccess = () => {
   $('#wanrning-content').text('Sign Out Successful! Please Register or Sign In to write reviews!');
+  setTimeout(function(){$('#wanrning-content').text(' ');}, 10000 );
     $('#signUpButton').removeClass('hidden');
     $('#signInButton').removeClass('hidden');
     $('#changePwButton').addClass('hidden');

@@ -21,7 +21,11 @@ const onShowSuccess = function(data){
   $('#my-reviews').html(showReviewsHtml);
 };
 const onCreateSuccess =function() {
+
+  $('#wanrning-content').text("Review created!");
+  setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
   console.log('Successful log');
+
 };
 const onCreateError = function (response) {
   console.error(response);
@@ -43,6 +47,8 @@ const onUpdateReviewError = function (response) {
 
 const onDeleteSuccess = function () {
   console.log('no content');
+  $('#wanrning-content').text("You have deleted your review!");
+  setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
 };
 const onDeleteError = function (response) {
   console.error(response);
