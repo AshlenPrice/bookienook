@@ -39,10 +39,10 @@
         <button type="button" class="btn btn-primary navbar-btn" id="signInButton" data-toggle="modal" data-target="#signInModal">
       Sign In!
       </button>
-        <button type="button" class="btn btn-primary navbar-btn" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
+        <button type="button" class="btn btn-primary navbar-btn hidden" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
       Change Password!
       </button>
-        <button type="button" class="btn btn-primary navbar-btn" id="sign-out">
+        <button type="button" class="btn btn-primary navbar-btn hidden" id="sign-out">
           Sign Out!
         </button>
       </div>
@@ -95,7 +95,7 @@
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-              <h4 class="modal-title" id="SignInModalLabel">Sing In!</h4>
+              <h4 class="modal-title" id="SignInModalLabel">Sign In!</h4>
             </div>
             <div class="modal-body">
               <form id="sign-in">
@@ -164,10 +164,13 @@
 
   </header>
 
+  <!-- message content box -->
+  <div id="wanrning-content" class="content">
+  </div>
 
   <main>
     <section class="intro" id="welcome-text">
-      <p>some sample text will go in here</p>
+      <p>Welcome to BookieNook! Here you can find your next reading adveture! All the books are recommended by kids like you from all over, and they even write reviews about their favorite part.</p>
     </section>
 
   <!-- Show and clear books buttons -->
@@ -175,11 +178,10 @@
       <button id="clearBooksButton" class="btn btn-default btn-lg">Clear Books!</button>
 
     <section class="bookslist" id="booktable"></section>
-
-    <!-- <div id="content" class="content">
-    </div> -->
+<!-- all review actions -->
+  <div class="hide-onSignOut" id="review-actions">
     <!-- Create a new review -->
-    <form class='create-review' id="review-post">
+    <form class='create-review hidden' id="review-post">
       <fieldset>
         <div class="form-group">
           <input type="text" name="review[review_content]" placeholder="Add your review">
@@ -190,7 +192,7 @@
       </fieldset>
     </form>
     <!-- Update a review -->
-    <form class='review-update' id="update-review">
+    <form class='review-update hidden' id="update-review">
       <fieldset>
         <div class="form-group">
           <input type="number" name="review[id]" placeholder="ID">
@@ -203,13 +205,13 @@
 
     <!--get reviews  -->
 
-    <form class='get-reviews' id="reviews">
+    <form class='get-reviews hidden' id="reviews">
       <fieldset>
         <button type="submit" class="btn btn-default btn-lg">Look at Reviews</button>
       </fieldset>
     </form>
 
-    <form class='show' id="show-review">
+    <form class='show hidden' id="show-review">
       <fieldset>
         <div class="form-group">
           <input type="text" name="review[id]" placeholder="ID">
@@ -230,7 +232,7 @@
     </div>
 
     <!-- Delete a review -->
-    <form class='reviewdelete' id="delete-review">
+    <form class='review-delete hidden' id="delete-review">
       <fieldset>
         <div class="form-group">
           <input type="text" name="review[id]" placeholder="Delete Review">
@@ -238,7 +240,7 @@
         <button type="submit" class="btn btn-default btn-lg">Delete</button>
       </fieldset>
     </form>
-
+</div>
 
   </main>
 
@@ -251,7 +253,7 @@
 
 
 
-  <footer></footer>
+  <footer>Made by Ashlen Price</footer>
 
 </body>
 

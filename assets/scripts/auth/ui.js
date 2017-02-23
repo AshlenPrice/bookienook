@@ -26,7 +26,7 @@ const changePwSuccess = () => {
   $('#change-password')[0].reset();
   $('#change-pw-prompt').text('Password Changed Successfully!');
   $('#changePwModal').modal('hide');
-  $('#change-pw-prompt').text(' ');
+  // $('#change-pw-prompt').text(' ');
 
 };
 
@@ -44,31 +44,42 @@ const failure = () => {
 const signInSuccess = () => {
   console.log("success!"); // make it here?
   $('#sign-in')[0].reset();
-    $('#prompt').text('Sign In success!');
+  $('#prompt').text('Sign In success!');
   $('#signInModal').modal('hide');
+
+  $('#signUpButton').addClass('hidden');
+  $('#signInButton').addClass('hidden');
+  $('#changePwButton').removeClass('hidden');
+  $('#sign-out').removeClass('hidden');
+  $('#review-post').removeClass('hidden');
+  $('#update-review').removeClass('hidden');
+  $('#reviews').removeClass('hidden');
+  $('#show-review').removeClass('hidden');
+  $('#delete-review').removeClass('hidden');
+
 };
 
-//   $('#signUpButton').addClass('hidden');
-//   $('#signInButton').addClass('hidden');
-//   $('#changePwButton').removeClass('hidden');
-//   $('#sign-out').removeClass('hidden');
 
 
 
 const signOutSuccess = () => {
-  $('#prompt').text('Sign Out Successful! Please Register or Sign In to write reviews!');
-
+  $('#wanrning-content').text('Sign Out Successful! Please Register or Sign In to write reviews!');
+    $('#signUpButton').removeClass('hidden');
+    $('#signInButton').removeClass('hidden');
+    $('#changePwButton').addClass('hidden');
+    $('#sign-out').addClass('hidden');
+    $('#review-post').addClass('hidden');
+    $('#update-review').addClass('hidden');
+    $('#reviews').addClass('hidden');
+    $('#show-review').addClass('hidden');
+    $('#delete-review').addClass('hidden');
+    $('#change-pw-prompt').text
+    (' ');
+    $('#sign-up-prompt').text
+    (' ');
+    $('#sign-in-prompt').text
+    (' ');
 };
-//   $('#signUpButton').removeClass('hidden');
-//   $('#signInButton').removeClass('hidden');
-//   $('#changePwButton').addClass('hidden');
-//   $('#sign-out').addClass('hidden');
-//   $('#change-pw-prompt').text
-//   (' ');
-//   $('#sign-up-prompt').text
-//   (' ');
-//   $('#sign-in-prompt').text
-//   (' ');
 
 
 

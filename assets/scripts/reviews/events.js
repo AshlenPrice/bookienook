@@ -16,7 +16,7 @@ const onCreateReview = function (event) {
       return store.review;
     })
     .then(ui.onCreateSuccess)
-    .catch(ui.onError);
+    .catch(ui.onCreateError);
 };
 
 const onShowReview = function (event) {
@@ -25,7 +25,7 @@ const onShowReview = function (event) {
   console.log(data);
   let id = data.review.id;
     api.showReview(id)
-    .then(ui.onSuccess)
+    .then(ui.onShowSuccess)
     .catch(ui.onError);
 };
 
@@ -43,7 +43,7 @@ const onUpdateReview = function (event) {
   let data = getFormFields(event.target);
   api.updateReviews(data.review.id, data)
     .then(ui.onUpdateReviewSuccess)
-    .catch(ui.onUpdateError);
+    .catch(ui.onUpdateReviewError);
 };
 
 const onDeleteReview = function (event) {

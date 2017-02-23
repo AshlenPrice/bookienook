@@ -14,7 +14,7 @@ const getBooksSuccess = (data) => {
   console.table(data.books);
 
   let showBooksHtml = showBooksTemplate({ books: data.books });
-$('.bookslist').append(showBooksHtml);
+$('.bookslist').html(showBooksHtml);
 };
 
 
