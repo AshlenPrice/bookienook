@@ -51,6 +51,7 @@ const signInSuccess = () => {
   $('#signInButton').addClass('hidden');
   $('#changePwButton').removeClass('hidden');
   $('#sign-out').removeClass('hidden');
+  $('.show').removeClass('hidden');
   $('#review-post').removeClass('hidden');
   $('#update-review').removeClass('hidden');
   $('#reviews').removeClass('hidden');
@@ -69,6 +70,9 @@ const signOutSuccess = () => {
     $('#signInButton').removeClass('hidden');
     $('#changePwButton').addClass('hidden');
     $('#sign-out').addClass('hidden');
+    $('#review').addClass('hidden');
+    $('.show').addClass('hidden');
+
     $('#review-post').addClass('hidden');
     $('#update-review').addClass('hidden');
     $('#reviews').addClass('hidden');

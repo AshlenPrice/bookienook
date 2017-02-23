@@ -8,7 +8,6 @@ const onSuccess = function (data) {
 console.table(data);
     let getReviewsHtml = getReviewsHandlebars({ reviews: data.reviews });
     $('#global-reviews').html(getReviewsHtml);
-    $('.inputs').val('');
   };
   const onError = function (response) {
     console.error(response);
@@ -16,19 +15,22 @@ console.table(data);
   };
 
 const onShowSuccess = function(data){
+  $('#show-review')[0].reset();
     console.table(data.reviews);
   let showReviewsHtml = showReviewsHandlebars({ reviews: data.reviews });
   $('#my-reviews').html(showReviewsHtml);
 };
 const onCreateSuccess =function() {
-
+  $('#review-post')[0].reset();
   $('#wanrning-content').text("Review created!");
   setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
+
   console.log('Successful log');
 
 };
 const onCreateError = function (response) {
   console.error(response);
+  $('#review-post')[0].reset();
   $('#wanrning-content').text("Can't do that!");
   setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
 };
@@ -36,11 +38,15 @@ const onCreateError = function (response) {
 const onUpdateReviewSuccess = function (data) {
   if (data) {
     console.log(data);
+      $('#update-review')[0].reset();
+      $('#wanrning-content').text("Your Review had been updated!");
+      setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
   }
 };
 
 const onUpdateReviewError = function (response) {
   console.error(response);
+  $('#update-review')[0].reset();
   $('#wanrning-content').text("You can't update a review you didn't write!");
   setTimeout(function(){$('#wanrning-content').text(' ');}, 5000 );
 };
