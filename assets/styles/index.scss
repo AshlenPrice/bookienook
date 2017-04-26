@@ -1,23 +1,28 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
-
-// Color templates
+@import '~bootstrap-sass/assets/stylesheets/bootstrap'; // Color templates
 $white: #fff;
 $quartz: #4d4a4b;
 $quick-silver: #ada39e;
 $sea-serpent: #3fc0c9;
 $pastel-blue: #b9d4ce;
 
-
-
 body {
   background-color: $quick-silver;
+  background: url("https://github.com/AshlenPrice/bookienook/blob/d8fc47a1e9d16d3e8794d3b0e3404bb62b61eaf2/bookienook.png?raw=true") no-repeat center center fixed;
+  background-size: cover;
   font-family: 'Mouse Memoirs', sans-serif;
   text-align: center;
   font-size: 16px;
-
 }
 
+.booklist {
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.booklist:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
 // .show {
 //   color: $white;
 // }

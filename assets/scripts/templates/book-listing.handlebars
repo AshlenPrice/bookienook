@@ -2,7 +2,6 @@
   <table class="table table-hover">
 <thead>
   <tr>
-    <th>ID</th>
     <th>Title</th>
     <th>Author</th>
     <th>Grade Level</th>
@@ -12,8 +11,8 @@
 </thead>
 <tbody>
 {{#each books as |book|}}
-  <tr data-id="{{book.id}}">
-    <th scope="row">{{book.id}}</th>
+  <!-- <tr data-id="{{book.id}}">
+    <th scope="row">{{book.id}}</th> -->
     <td>{{book.title}}</td>
     <td>{{book.author}}</td>
     <td>{{book.grade_level}}</td>
