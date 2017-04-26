@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BookieNook</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags unless you know what you are doing -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags unless you know what you are doing -->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
+</head>
+
+<body class="container-fluid">
+  <header>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-3">
+           <span class="sr-only">Toggle navigation</span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+           <span class="icon-bar"></span>
+         </button>
+          <a class="navbar-brand" href="#">BookieNook</a>
+        </div>
+      </div>
+      <!-- Buttons for user account informantion, they have corresponding modals -->
+      <div class="user-account collapse navbar-collapse">
+        <button type="button" class="btn btn-primary navbar-btn" id="signUpButton" data-toggle="modal" data-target="#signUpModal">
+      Register!
+      </button>
+        <button type="button" class="btn btn-primary navbar-btn" id="signInButton" data-toggle="modal" data-target="#signInModal">
+      Sign In!
+      </button>
+        <button type="button" class="btn btn-primary navbar-btn hidden" id="changePwButton" data-toggle="modal" data-target="#changePwModal">
+      Change Password!
+      </button>
+        <button type="button" class="btn btn-primary navbar-btn hidden" id="sign-out">
+          Sign Out!
+        </button>
+      </div>
+    </nav>
+
+
+    <!-- User account Modals -->
+    <!-- Sign-Up -->
+    <div class="registration">
+      <div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+              <h4 class="modal-title" id="SignUpModalLabel">Register!</h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-up">
+                <fieldset>
+                  <legend>Sign up!</legend>
+                  <label>
+                Email
+                <input type="text" name="credentials[email]" placeholder="Email">
+              </label>
+                  <label>
+                Password
+                <input type="password" name="credentials[password]" placeholder="Password">
+              </label>
+                  <label>
+                Password Confirmation
+                <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              </label>
+                  <input type="submit" name="submit" value="Sign up!">
+                </fieldset>
+                <div class="form-message" id="sign-up-prompt"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sign in modal -->
+
+      <div class="modal fade" id="signInModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+              <h4 class="modal-title" id="SignInModalLabel">Sign In!</h4>
+            </div>
+            <div class="modal-body">
+              <form id="sign-in">
+                <fieldset>
+                  <legend>Sign In!</legend>
+                  <label>
+                Email
+                <input type="text" name="credentials[email]" placeholder="Email">
+              </label>
+                  <label>
+                Password
+                <input type="password" name="credentials[password]" placeholder="Password">
+              </label>
+                  <input type="submit" name="submit" value="Sign In!">
+                </fieldset>
+                <div class="form-message" id="sign-in-prompt"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- change password modal -->
+
+      <div class="modal fade" id="changePwModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+              <h4 class="modal-title" id="ChangePwModalLabel">Change Your Password!</h4>
+            </div>
+            <div class="modal-body">
+              <form id="change-password">
+                <fieldset>
+                  <legend>Change Password!</legend>
+                  <label>
+                Current Password
+                <input type="password" type="current password" name="passwords[old]" placeholder="Old Password">
+              </label>
+                  <label>
+                New Password
+                <input type="password" type="new password" name="passwords[new]" placeholder="New Password">
+              </label>
+                  <input type="submit" name="submit" value="Change Password!">
+                </fieldset>
+                <div class="form-message" id="change-pw-prompt"></div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <form id="sign-out">
+        <fieldset>
+        <legend>Sign Out!</legend>
+        <input type="submit" name="submit" value="Sign Out!">
+      </fieldset>
+      </form> -->
+    </div>
+
+  </header>
+
+  <!-- message content box -->
+  <div id="wanrning-content" class="content">
+  </div>
+
+  <main>
+    <section class="intro" id="welcome-text">
+      <p>Welcome to BookieNook! Here you can find your next reading adveture! All the books are recommended by kids like you from all over, and they even write reviews about their favorite part.</p>
+    </section>
+
+  <!-- Show and clear books buttons -->
+    <button type="button" class="btn btn-default btn-lg" id="books-btn">Check Out Books you can read!</button>
+      <button id="clearBooksButton" class="btn btn-default btn-lg">Clear Books!</button>
+
+    <section class="bookslist" id="booktable"></section>
+<!-- all review actions -->
+  <div class="hide-onSignOut" id="review-actions">
+    <!-- Create a new review -->
+    <form class='create-review hidden' id="review-post">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" name="review[review_content]" placeholder="Add your review">
+          <input type="text" name="review[book_id]" placeholder="Book id">
+          <!-- <input type="text" name="content[user_id]" id="user-id"> -->
+        </div>
+        <button type="submit" class="btn btn-default btn-lg">Create Review</button>
+      </fieldset>
+    </form>
+    <!-- Update a review -->
+    <form class='review-update hidden' id="update-review">
+      <fieldset>
+        <div class="form-group">
+          <input type="number" name="review[id]" placeholder="ID">
+          <input type="text" name="review[review_content]" placeholder="Edited Review content">
+        </div>
+        <button type="submit" class="btn btn-default btn-lg">Edit Review</button>
+      </fieldset>
+    </form>
+
+
+    <!--get reviews  -->
+
+    <form class='get-reviews hidden' id="reviews">
+      <fieldset>
+        <button type="submit" class="btn btn-default btn-lg">Look at Reviews</button>
+      </fieldset>
+    </form>
+
+    <form class='show hidden' id="show-review">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" name="review[id]" placeholder="ID">
+        </div>
+        <button type="submit" class="btn btn-default btn-lg">Show Review</button>
+      </fieldset>
+    </form>
+
+    <div class="show hidden" id="show-reviews">
+      <table class="table" id="global-reviews">
+      </table>
+    </div>
+
+
+    <div class="show hidden" id="show-my-reviews">
+      <table class="table" id="my-reviews">
+      </table>
+    </div>
+
+    <!-- Delete a review -->
+    <form class='review-delete hidden' id="delete-review">
+      <fieldset>
+        <div class="form-group">
+          <input type="text" name="review[id]" placeholder="Delete Review">
+        </div>
+        <button type="submit" class="btn btn-default btn-lg">Delete</button>
+      </fieldset>
+    </form>
+</div>
+
+  </main>
+
+
+
+
+
+
+  <footer class="navbar-default navbar-fixed-bottom">
+  &copy; Ashlen Price.
+  </footer>
+
+</body>
+
+</html>
